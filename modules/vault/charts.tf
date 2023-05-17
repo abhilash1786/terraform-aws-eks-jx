@@ -1,7 +1,7 @@
 resource "helm_release" "vault-operator" {
   count            = local.create_vault_resources ? 1 : 0
-  name             = "vault-operator"
-  chart            = "vault-operator"
+  name             = "vault-operator28"
+  chart            = "vault-operator28"
   namespace        = "jx-vault"
   repository       = "https://kubernetes-charts.banzaicloud.com"
   version          = "1.14.3"
@@ -10,8 +10,8 @@ resource "helm_release" "vault-operator" {
 
 resource "helm_release" "vault-instance" {
   count      = local.create_vault_resources ? 1 : 0
-  name       = "vault-instance"
-  chart      = "vault-instance"
+  name       = "vault-instance28"
+  chart      = "vault-instance28"
   namespace  = "jx-vault"
   repository = "https://jenkins-x-charts.github.io/repo"
   version    = "1.0.24"
